@@ -2,12 +2,11 @@
 from django.template.loader import get_template
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Question, Answer, _question_status
+from .models import Question, Answer
 
 
 def index(request):
-    latest_question_list = Question.objects.filter(
-        status=_question_status.APPROVED).order_by('pub_date')
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
     template = get_template('faqs/index.html')
     context = {
         'latest_question_list': latest_question_list,
@@ -18,20 +17,10 @@ def index(request):
 def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
-        answers   = Answer.objects.filter(question=question, accepted=False)
-        try:
-            accepted_answer = Answer.objects.get(question=question, accepted=True)
-        except:
-            accepted_answer = ""
-
-
-        print(answers)
+        answer   = Answer.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Essa pergunta não foi feita ou ainda não foi respondida.")
-    return render(request, 'faqs/detail.html', {
-        'question': question,
-        'answers': answers,
-        'accepted_answer': accepted_answer})
+    return render(request, 'faqs/detail.html', {'question': question, 'answer': answer})
 
 
 def results(request, question_id):

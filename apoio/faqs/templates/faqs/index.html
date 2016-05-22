@@ -3,29 +3,21 @@
 
     <section text="center" layout="center full-width" clearfix>
         <h2>Perguntas e Respostas</h2>
-
+        
         {% if latest_question_list %}
-
+        
             {% for question in latest_question_list %}
-            <div layout="block silver margin-30 padding-10 more-rounded">
-                <p text="big purple">{{ question.text }}</p>
-                <div layout="block h-margin-40 padding-10 rounded">
-                    {% if question.has_accepted_answer %}
-                        <p layout="h-margin-40"text="gray-60 semi-bold center">{{ question.accepted_answer.text }}</p>
-                    {% else %}
-                        <p layout="h-margin-40" text="red semi-bold indent center">Nenhuma resposta aceita! entre e responda</p>
-                    {% endif %}
-                </div>
-                <a href="/faqs/{{ question.id }}/"><button text="purple">+ Respostas</button></a>
-            </div>
-
+        
+                <p text="big"><a href="/faqs/{{ question.id }}/">{{ question.question_text }}</a></p>
+            
             {% endfor %}
-
+        
         {% else %}
-
+        
             <p>Sem perguntas no momento.</p>
-
+        
         {% endif %}
     </section>
 
 {% include "footer.html" %}
+

@@ -1,7 +1,10 @@
-web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-        - .:/app/
-    ports:
-        - "8000:8000"
+version: "2"
+services:
+  web:
+      build: .
+      ports:
+          - "80:80"
+      logging:
+        driver: journald
+      volumes:
+        - banco_apoio:/app/apoio/db.sqlite3

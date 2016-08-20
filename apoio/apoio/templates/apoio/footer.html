@@ -16,11 +16,115 @@
     </footer>
 
     <!-- jQuery -->
-    <!--<script src="https://cdn.iikb.org/jquery/latest/jquery.min.js"></script>-->
+    <script src="https://cdn.iikb.org/jquery/latest/jquery.min.js"></script>
 
     <!-- script -->
-    <!--<script type="text/javascript">
-    </script>-->
+    <script type="text/javascript">
+        // Copyright 2015 Mozart Olbrycht-Palmer; no rights reserved
+        // Adapted in 2016 for the Brazilian Pirate Party by Carlos Costa.
+        $(window).load(function(){
+          var index;
+          var list = '<ul class="column-list">';
+          var option = [
+              "COMUNICAÇÃO",
+              "COMUNICADO DE IMPRENSA",
+              "DESIGNER",
+              "TECNOLOGIA",
+              "JURÍDICO",
+              "GESTÃO DE CRISES",
+              "RELAÇÕES INTERNACIONAIS",
+              "PROPOSTAS",
+              ];
+          for (index = 0; index < option.length; index++) {
+            list += "<li>" + option[index] + "</li>";
+            }    
+          list += "</ul>"; 
+          $('#column-1').html(list);
+          $("#column-1").contents().find("li").click(function() {
+            $("#column-1").contents().find("li.selected").removeClass("selected");
+            $(this).toggleClass("selected");
+            $("#column-3").hide();
+            var col1 = $("#column-1").contents().find(".selected").index();
+            if (col1 == 1) {
+              $("#default-3").hide();
+            } else {
+              $("#default-3").show();
+            }
+            option[0] = [
+              "O que é o Grupo de Trabalho de Comunicação?",
+              "Eu escrevi um texto ou quero ajudar em revisar ou traduzir",
+              "Eu quero fazer parte do Grupo de Comunicação",
+              ];
+            option[1] = [
+              "O que é um Comunicado de Imprensa?",
+              "Tenho uma ideia para um Comunicado de Imprensa. O que fazer?",
+              "Escrevi um Comunicado de Imprensa. Como proceder?",
+              ];
+            option[2] = [
+              "Eu tenho ideia para uma imagem ou um vídeo",
+              "Eu fiz uma imagem ou um vídeo",
+              ];
+            option[3] = [
+              "Eu quero entrar no grupo de TI",
+              ]
+            option[4] = [
+              "O que é o Jurídico Pirata?",
+              "Quero ser parte do Jurídico do Partido Pirata",
+              ];
+            option[5] = [
+              "O que é Gestão de Crises?",
+              ];
+            option[6] = [
+              "O que são Relações Internacionais?",
+              "Quero ser parte do grupo de Relações Internacionais",
+              ];
+            option[7] = [
+              "O que são propostas?",
+              "Eu tenho uma ideia para uma proposta",
+              "O que é Loomio?",
+              ];
+            var list = '<ul class="column-list">';
+            for (index = 0; index < option[col1].length; index++) {
+              list += "<li>" + option[col1][index] + "</li>";
+              }
+            list += "</ul>";
+            $('#column-3').html(list);
+            $("#default-3").hide();
+            $("#column-3").show();
+            $("#column-3").contents().find("li").click(function() {
+              $("#column-3").contents().find("li.selected").removeClass("selected");
+              $(this).toggleClass("selected");
+              var col3 = $("#column-3").contents().find(".selected").index();
+              $(".output").children("div").hide();
+              if (col1 == 0) {
+                $("#press").children().eq(col3).show();
+                window.location.href = "#press";
+              } else if (col1 == 1) {
+                $("#press2").children().eq(col3).show();
+                window.location.href = "#press2";
+              } else if (col1 == 2) {
+                $("#designs").children().eq(col3).show();
+                window.location.href = "#designs";
+              } else if (col1 == 3) {
+                $("#gti").children().eq(col3).show();
+                window.location.href = "#gti";
+              } else if (col1 == 4) {
+                $("#gtj").children().eq(col3).show();
+                window.location.href = "#gtj";
+              } else if (col1 == 5) {
+                $("#policy").children().eq(col3).show();
+                window.location.href = "#policy";
+              } else if (col1 == 6) {
+                $("#inter").children().eq(col3).show();
+                window.location.href = "#inter";
+              } else if (col1 == 7) {
+                $("#proposta").children().eq(col3).show();
+                window.location.href = "#proposta";
+              }
+            });
+          });
+        });
+    </script>
 
 </body>
 </html>

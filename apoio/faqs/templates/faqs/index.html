@@ -1,48 +1,17 @@
 
-{% load staticfiles %}                                                                                                                                                 
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
- 
-    <!-- meta -->
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="" />
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
- 
- 
-    <title>APOIE OS PIRATAS</title>
- 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="" />
-    <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
- 
-    <!-- Google Web Fonts -->
-    <link href='https://www.google.com/fonts/specimen/Open+Sans' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css' />
-    <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans+Mono' rel='stylesheet' type='text/css' />
- 
-    <!-- Google Material Font Icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
- 
-    <!-- The excelent http://helpers.araujo.cc plus our own CSS overlay -->
-    <link rel="stylesheet" href="{% static "helpers.min.css" %}" />
-    <link rel="stylesheet" href="{% static "piratas.css" %}" />
- 
-    <!--<link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
-        <script src="http://openlayers.org/en/v3.15.1/build/ol.js" type="text/javascript"></script>-->
-</head>
- 
-<body text="line-1.5 gray-90" layout="no-margin">
+{% load staticfiles %}
+
+{% include "header.html" %}
 
     <nav layout="" text="upper big" text="navy white line-1" links="hover-white fadeIn">
-        <div>                                                                                                                                                          
-            <a href="/">HOME</a>
+        <div>
+            <a href="http://partidopirata.org/">
+                <img src="/static/img/Piratpartiet.svg" width="32px" height="32px" alt="Partido Pirata" />
+            </a>
+            <a href="/">apoio</a>
             <a href="/faqs">FAQ</a>
         </div>
-    </nav> 
+    </nav>
 
     <section layout="center fix">
         <h2 layout="margin-15">Respostas para as perguntas mais frequentes</h2>

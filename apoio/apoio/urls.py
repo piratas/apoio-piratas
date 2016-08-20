@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^faqs/', include('faqs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
+    url(r'^volunteer/$', views.volunteer, name='volunteer'),
 ]
 
 

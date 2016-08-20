@@ -26,9 +26,9 @@
 	<meta property="og:title" content="APOIE OS PIRATAS">
 	<meta property="og:description" content="Campanha de Coleta de Assinaturas para o Partido Pirata" />
 	<meta property="og:site_name" content="Apoie o Partido Pirata" />
-	<meta property="og:image" content="https://apoio.partidopirata.org/static/liberte_democracia_PIRATAS.jpg" />
-	<meta property="og:image:url" content="https://apoio.partidopirata.org/static/liberte_democracia_PIRATAS.jpg" />
-	<meta property="og:image:secure_url" content="https://apoio.partidopirata.org/static/liberte_democracia_PIRATAS.jpg" />
+	<meta property="og:image" content="https://apoio.partidopirata.org/static/img/liberte_democracia_PIRATAS.png" />
+	<meta property="og:image:url" content="https://apoio.partidopirata.org/static/img/liberte_democracia_PIRATAS.png" />
+	<meta property="og:image:secure_url" content="https://apoio.partidopirata.org/static/img/liberte_democracia_PIRATAS.png" />
 	<meta property="og:image:type" content="image/jpeg" />
 	<meta property="og:image:width" content="1214" />
 	<meta property="og:image:height" content="528" />
@@ -40,17 +40,18 @@
 	<meta name="twitter:creator" content="@PartidoPirataBR" />
 	<meta name="twitter:description" content="Campanha de Coleta de Assinaturas para o Partido Pirata" />
 	<meta name="twitter:title" content="APOIE OS PIRATAS">
-	<meta name="twitter:image" content="https://apoio.partidopirata.org/static/liberte_democracia_PIRATAS.jpg" />
+	<meta name="twitter:image" content="https://apoio.partidopirata.org/static/img/liberte_democracia_PIRATAS.png" />
 	<meta name="twitter:image:alt" content="Liberte a Democracia - Partido Pirata" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="" />
-    <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
-
+    	<link rel="icon" href="{% static "/img/favicon.ico" %}" type="image/x-icon" />
+    	<!-- Favicon in svg for Firefox -->
+    	<link rel="icon" type="image/svg+xml" href="{% static "/img/favicon.svg" %}">
+    
     <!-- The excelent http://helpers.araujo.cc plus our own CSS overlay -->
-    <link rel="stylesheet" href="{% static "fontes.css" %}" />
-    <link rel="stylesheet" href="{% static "helpers.min.css" %}" />
-    <link rel="stylesheet" href="{% static "piratas.css" %}" />
+    <link rel="stylesheet" href="{% static "/static/css/fonts.css" %}" />
+    <link rel="stylesheet" href="{% static "/static/css/helpers.min.css" %}" />
+    <link rel="stylesheet" href="{% static "/static/css/piratas.css" %}" />
 
     <!--<link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
         <script src="http://openlayers.org/en/v3.15.1/build/ol.js" type="text/javascript"></script>-->

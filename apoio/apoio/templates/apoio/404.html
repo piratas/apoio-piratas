@@ -1,17 +1,29 @@
+
+{% load staticfiles %}
+
 {% include "header.html" %}
 
-<section text="center" layout="center full-width fix">
-    <h1>Page unavailable</h1>
+     <!-- Fixed navbar -->
+     <nav layout="" text="upper big" text="navy white line-1" links="hover-white fadeIn">
+        <div>
+            <a href="http://partidopirata.org/">
+                <img src="/static/img/Piratpartiet.svg" width="32px" height="32px" alt="Partido Pirata" />
+            </a>
+            <a href="/">apoio</a>
+        </div>
+    </nav>
 
-    <div layout="v-padding-15">
-        <img src="static/liberte_democracia_PIRATAS.jpg" alt="Liberte a Democracia com os PIRATAS" layout="top-40" />
-    </div>
+    <section text="center" layout="center full-width fix">
+        <h1>Page unavailable</h1>
 
-    <p>Sorry, but the requested page is unavailable due to a server hiccup.</p>
-    <p>Our engineers have been notified, so check back later.</p>
-    
-    <br>
-    <p text="bigger bolder purple center">AHOY !!!</p>
-</section>
+        <p>Sorry, but the requested page is unavailable due to a server hiccup.</p>
+        <p>Our engineers have been notified, so check back later.</p>
+
+        <div layout="center v-padding-15">
+            <img src="/static/img/liberte_democracia_PIRATAS.png" alt="Liberte a Democracia com os PIRATAS" layout="top-40" />
+        </div>
+
+        <p text="bigger bolder center">AHOY !!!</p>
+    </section>
 
 {% include "footer.html" %}

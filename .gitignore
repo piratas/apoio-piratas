@@ -4,3 +4,4 @@
 *.swp
 *.pyc
 apoio/inc/admin/*
+*.log
